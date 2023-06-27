@@ -21,25 +21,25 @@ public:
 
            else
             {
-                 if(!checking_if_valid.empty())
-            {
-                if( (checking_if_valid.top()=='(' && s[i]==')' )|| 
-                    (checking_if_valid.top()=='[' && s[i]==']' )|| 
-                    (checking_if_valid.top()=='{' && s[i]=='}' ) )
-                {
-                    checking_if_valid.pop();
-                }
+                if(!checking_if_valid.empty())
+                {   
+                        if( (checking_if_valid.top()=='(' && s[i]==')' )|| 
+                        (checking_if_valid.top()=='[' && s[i]==']' )|| 
+                        (checking_if_valid.top()=='{' && s[i]=='}' ) )
+                         {
+                                 checking_if_valid.pop();
+                         }
 
-                else
-                {
-                    return false;
-                }
+                         else
+                         {
+                                return false;
+                        }
               
-            }
-            else //if the stack is empty then this means that there's no open bracket present in the starting therefore string is invalid
-            {
-                return false;
-            } 
+                }
+                else //if the stack is empty then this means that there's no open bracket present in the starting therefore string is invalid
+                {
+                     return false;
+                } 
             }
        } 
  
