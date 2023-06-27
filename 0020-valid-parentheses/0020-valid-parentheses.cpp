@@ -41,8 +41,6 @@ public:
                 return false;
             } 
             }
-                      
-
        } 
  
        return checking_if_valid.empty();
