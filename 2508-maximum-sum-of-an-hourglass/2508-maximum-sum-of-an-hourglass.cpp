@@ -7,9 +7,9 @@ public:
         int rows = grid.size();
         int coloumns = grid[0].size();
 
-        for(int i=0;i<rows-2;i++)
+        for(int i=0 ; i<rows-2; i++)
         {
-            for(int j=0;j<coloumns-2;j++)
+            for(int j = 0; j<coloumns-2; j++)
             {
                 ans = max(ans,grid[i][j]+grid[i][j+1]+
                               grid[i][j+2]+grid[i+1][j+1]+
