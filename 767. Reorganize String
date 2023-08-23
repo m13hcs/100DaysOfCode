@@ -1,0 +1,52 @@
+class Solution {
+public:
+    string reorganizeString(string s) {
+        vector<int> alpha_freq(26, 0);
+
+        for (char c : s) {
+            alpha_freq[c - 'a']++;
+        }
+
+        char max_alpha = 'a';
+        int max_freq = alpha_freq[0];
+
+        for (int i = 1; i < 26; i++) {
+            if (alpha_freq[i] > max_freq) {
+                max_freq = alpha_freq[i];
+                max_alpha = 'a' + i;
+            }
+        }
+
+        if (max_freq > (s.length() + 1) / 2) {
+            return "";
+        }
+
+        string str = s;
+
+        int idx = 0;
+        for (int i = 0; i < s.length(); i += 2) {
+            if (alpha_freq[max_alpha - 'a'] > 0) {
+                str[i] = max_alpha;
+                alpha_freq[max_alpha - 'a']--;
+            } else {
+               
+                while (alpha_freq[idx] == 0) {
+                    idx++;
+                }
+                str[i] = 'a' + idx;
+                alpha_freq[idx]--;
+            }
+        }
+
+        for (int i = 1; i < s.length(); i += 2) {
+           
+            while (alpha_freq[idx] == 0) {
+                idx++;
+            }
+            str[i] = 'a' + idx;
+            alpha_freq[idx]--;
+        }
+
+        return str;
+    }
+};
