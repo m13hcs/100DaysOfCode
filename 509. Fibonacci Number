@@ -1,0 +1,11 @@
+class Solution {
+public:
+    int fib(int n) {
+        double phi = (1+sqrt(5))/2;
+        double phi_n = pow(phi,n);
+        double a_n = (phi_n+(1/phi_n))/sqrt(5);
+
+        return a_n; 
+
+    }
+};
