@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int climbStairs(int n) {
+        //On observing the pattern it is evident that climbing stairs is forming a fibonacci sequance so we will simply use the golden ratio formula 
+
+        double phi = (1+sqrt(5))/2;
+        double phi_n = pow(phi,n+1);
+        double answer = (phi_n+(1/phi_n))/sqrt(5);
+
+        
+        return answer;
+    }
+};
