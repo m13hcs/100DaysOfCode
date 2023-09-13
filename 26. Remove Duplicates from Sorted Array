@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        //Using two-pointer approach, one pointer points to the current element and the other pointer points to the position of the unique element
+        int unique_count = 1;
+        for (int i=1; i<nums.size(); i++) 
+        {
+            if (nums[i]!=nums[i-1]) 
+            {
+                nums[unique_count] = nums[i]; 
+                unique_count++;
+            }
+        }
+
+        return unique_count;
+    }
+};
