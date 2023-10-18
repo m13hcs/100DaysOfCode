@@ -1,0 +1,33 @@
+class Solution {
+public:
+    int minimumRightShifts(vector<int>& nums) {
+    
+        int n = nums.size();
+
+    
+    vector<int> sorted_nums = nums;
+    sort(sorted_nums.begin(), sorted_nums.end());
+
+    for (int i = 0; i < n; ++i) {
+        bool is_sorted = true;
+        for (int j = 0; j < n; ++j) {
+            if (nums[j] != sorted_nums[j]) {
+                is_sorted = false;
+                break;
+            }
+        }
+        if (is_sorted) {
+            return i;
+        }
+        
+        int last_element = nums[n - 1];
+        for (int j = n - 1; j > 0; --j) {
+            nums[j] = nums[j - 1];
+        }
+        nums[0] = last_element;
+    }
+
+    return -1;
+
+    }
+};
