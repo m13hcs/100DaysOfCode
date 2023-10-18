@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        /*
+        We are asked to change the vector nums such that the first
+        k elements are not equal to val so we will traverse the vector
+        and whenever we find a value not equal to val we will put that 
+        element in the left or the front and to track this we will make
+        another counter which will keep track of the indices already
+        filled with elements not equal to val
+        */
+        int index = 0; 
+        for(int i = 0; i<nums.size(); i++)
+        {
+            if(nums[i]!=val)
+            {
+                nums[index]=nums[i];
+                index++;
+            }
+        }
+        return index; 
+    }
+};
