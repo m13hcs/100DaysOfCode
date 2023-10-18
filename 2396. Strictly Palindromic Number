@@ -1,0 +1,7 @@
+class Solution {
+public:
+    bool isStrictlyPalindromic(int n) {
+        /*Theres no such kind of a number*/
+        return false;
+    }
+};
